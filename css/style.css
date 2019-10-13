@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+body{
+background:#719192;
+margin: 0;
+color: #303b3b;
+font-family: 'segoe ui';
+
+}
+* {
+    box-sizing: border-box;
+  }
+  
+ 
+  
+  .nav {
+    height: 50px;
+    width: 100%;
+    background-color:  #303b3b;
+    position: fixed;
+    z-index: 1;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+  }
+  
+  .nav > .nav-btn {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links > a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav > .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-btn > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
+
+.showcase::after{
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+.showcase:hover::after{
+ filter:blur(0px);
+ -webkit-filter: blur(0px);
+
+}
+
+.showcase:hover .content{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.content{
+position: absolute;
+z-index: 1;
+margin: auto;
+
+left: 50%;
+margin-top: 105px;
+margin-left: -145px;
+width: 300px;
+height: 350px;
+text-align: center;
+
+
+
+}
+
+.content .logo{
+height: 200px;
+width: 240px;
+}
+
+
+.content .title{
+margin-top: 1rem;
+font-size: 2.8rem;
+}
+.content p{
+font-size: 1.2rem;
+line-height: 1.6;
+margin-top: 1rem;
+    }
+ 
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+.center{
+background-image: url("https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+height: 250px;
+width: 350px;
+margin: auto;
+}
+.grid-3{
+    display:grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    margin: auto;
+    
+
+}
+.about{
+    background: #f4f4f4f4; 
+}
+
+.bg-light{
+    background: #f4f4f4f4;
+    margin: auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+   
+
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    text-align: center;
+    margin: auto;
+}
+.bg-footer{
+    padding: 1.4rem;
+}
+footer p{
+    margin:0;
+    text-align:center ;
+    font-weight:588;
+}
+
+
+/* small screens */
+@media(max-width:560px){
+.showcase::after{
+        height: 60vh;
+       } 
+
+.content{
+  
+    margin-top: 90px;
+    
+}
+.content .logo{
+    height: 120px;
+    width: 140px;
+    }
+    .content .title{
+      
+        font-size: 2.4rem;
+        }
+.content p{
+    display: none;
+}
+.grid-3, .grid-2{
+  
+    grid-template-columns: 1fr;  
+
+}
+.grid-3 div{
+    border-bottom:#303b3b 1px dotted;
+  padding: 0.5rem;
+    
+}
+
+}
+
+/* landscape */
+@media(max-height:500px){
+   
+       .content p{
+        display: none;
+    }
+    .content .title{
+        display: none;
+    }
+}
+
+/* margin:0;
+color:#fff;
+font-family: 'Roboto Mono', monospace;
+
+}
+
+.showcase::after{
+    content:"";
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+
+    transition: all 1s;
+}
+
+.showcase:hover::after{
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+}
+.showcase:hover .content{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+.content{
+    
+position: absolute;
+z-index: 1;
+margin-top: 105px;
+margin-left: -145px;
+top:10%;
+left: 50%;
+width: 500px;
+height: 350px;
+text-align: center;
+transition:all 1000ms ;
+color:#3c4245;
+
+}
+
+.content .title{
+
+font-size: 2.2rem;
+}
+
+
+.content  p{
+
+font-size: 1.2rem;
+}
+.content .logo{
+    width: 300px;
+    height: 300px;
+}
+
+.container{
+  max-width: 960px;
+  overflow: hidden;
+  padding: 4rem 1rem;
+  margin: auto;
+
+  
+}
+
+.grid-3{
+ display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align:center;
+  grid-gap:2rem;
+  color: #3c4245;
+  
+}
+
+.grid-3 div{
+    padding: 1rem;
+
+}
+
+
+
+.bg-orange{
+    background:#f1bc31;
+    
+}
+
+.grid-2{
+    display: grid;
+     grid-template-columns: 1fr 1fr;
+     text-align:center;
+     grid-gap:2rem;
+     color: #3c4245;
+     
+   }
+  
+.center{
+ margin: auto;   
+ text-align: center;
+}
+.bg-footer{
+    background:#3c4245;
+    padding: 2.2rem;
+
+}
+footer p{
+    margin: 0;
+} */
+
+ 
